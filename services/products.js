@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const getAllProducts = async () => {
-  const productsResponse = await axios.get('./mockedApi/products.json');
+  const mockedApiUri = './mockedApi/products.json';
+  const productsResponse = await axios.get(mockedApiUri);
   return productsResponse.data.products;
 };
