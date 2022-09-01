@@ -1,8 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
+
+import ProductsListview from "../components/productsListview";
 
 export default function Home() {
   return (
-    <p>Hello</p>
+    <>
+      <ProductsListview />
+    </>
   )
 }
