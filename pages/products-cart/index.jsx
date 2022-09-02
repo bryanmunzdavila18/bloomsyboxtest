@@ -30,7 +30,7 @@ const ProductsCart = ( props ) => {
         productCartAction={removeProduct}
         cardButtonContent={cardButtonContent}
       >
-        <HomeButtonComponent />
+        <HomeButtonComponent cartListItems={cartListItems}/>
       </ProductsListview>
     </div>
   );
