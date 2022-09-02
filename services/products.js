@@ -11,7 +11,7 @@ const productActionMessages = {
   },
   successRemoveProduct: {
     message: 'Se removió el producto del carrito',
-    status: 'warning',
+    status: 'success',
   },
   errorRemoveProduct: {
     message: 'No se pudo rmeover el producto del carrito',
@@ -43,3 +43,15 @@ export const addProductCart = ( product, cartListItems, setCartListItems ) => {
   }
   return (productActionMessages.warningAddProduct);
 };
+
+export const removeProductCart = ( product, cartListItems, setCartListItems ) => {
+  try {
+    const productIndex = getCartProductIndex(product, cartListItems)
+    const spliceCartListItems = [...cartListItems];
+    spliceCartListItems.splice(productIndex, 1);
+    setCartListItems(spliceCartListItems);
+    return (productActionMessages.successRemoveProduct);
+  } catch (error) {
+    return (productActionMessages.errorRemoveProduct);
+  }
+}
