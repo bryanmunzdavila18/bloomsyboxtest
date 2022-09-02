@@ -3,7 +3,11 @@ import { useState } from 'react';
 
 function MyApp({ Component, pageProps }) {
   const [ cartListItems, setCartListItems ] = useState([]);
-  return <Component {...pageProps} cartListItems={cartListItems} setCartListItems={setCartListItems} />
+  return(
+    <div className="page-background p-16">
+      <Component {...pageProps} cartListItems={cartListItems} setCartListItems={setCartListItems} />
+    </div>
+  );
 };
 
 export default MyApp;

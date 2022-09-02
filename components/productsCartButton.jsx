@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
+import Link from "next/link";
 
 const ProductsCartButton = ( props ) => {
   const { badgeCounter } = props;
@@ -17,17 +18,19 @@ const ProductsCartButton = ( props ) => {
 
   return(
     <div className="flex justify-end">
-      <Button
-        className="cart-button"
-        variant="outlined"
-        endIcon={
-          <StyledBadge badgeContent={badgeCounter} color="secondary" className="m-1">
-            <ShoppingCartIcon />
-          </StyledBadge>
-        }
-      >
-        Ver carrito
-      </Button>
+      <Link href="./products-cart">
+        <Button
+          className="cart-button"
+          variant="outlined"
+          endIcon={
+            <StyledBadge badgeContent={badgeCounter} color="secondary" className="m-1">
+              <ShoppingCartIcon />
+            </StyledBadge>
+          }
+        >
+          Ver carrito
+        </Button>
+      </Link>
     </div>
   );
 }
